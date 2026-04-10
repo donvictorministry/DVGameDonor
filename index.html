@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>DVBible Donor Page</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="DV Support">
+
+<meta name="theme-color" content="#ffffff">
+
+<link rel="manifest" href='data:application/manifest+json,{"name":"DVBible Ministry Support","short_name":"DV Support","display":"standalone","background_color":"#ffffff","theme_color":"#ffffff"}'>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffffff;
+  color: #1c1c1e;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 20px 60px 20px;
+  background: #ffffff;
+}
+
+h1 {
+  font-size: 42px;
+  font-weight: 900;
+  text-align: center;
+  color: #1877F2;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 900;
+  text-align: center;
+  margin: 40px 0 20px 0;
+  color: #1877F2;
+  border-left: 5px solid #1877F2;
+  padding-left: 16px;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 20px 0 12px 0;
+  color: #1877F2;
+}
+
+.subhead {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e5ea;
+}
+
+p, li {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #2c2c2e;
+}
+
+.button {
+  background: #1877F2;
+  color: white;
+  padding: 14px 24px;
+  border-radius: 50px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  border: none;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.button:hover {
+  background: #145dbf;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.button-outline {
+  background: transparent;
+  border: 2px solid #1877F2;
+  color: #1877F2;
+}
+
+.button-outline:hover {
+  background: #e8f0fe;
+}
+
+.button-small {
+  padding: 10px 20px;
+  font-size: 16px;
+  width: auto;
+  display: inline-flex;
+  margin: 4px 0;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 40px 0;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 32px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.profile-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #1877F2;
+  margin-bottom: 16px;
+  background: #f0f0f0;
+}
+
+.profile-name {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1877F2;
+}
+
+.profile-role {
+  font-size: 18px;
+  font-weight: 700;
+color: #1877F2;
+  margin: 4px 0;
+}
+
+.profile-quote {
+  font-size: 18px;
+  font-weight: 700;
+  font-style: italic;
+  color: #666;
+  margin-top: 12px;
+  max-width: 400px;
+}
+
+.portfolio-button {
+  background: transparent;
+  border: 2px solid #1877F2;
+  color: #1877F2;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.portfolio-button:hover {
+  background: #e8f0fe;
+}
+
+.text-block {
+  max-height: none;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.text-block.collapsed {
+  max-height: 180px;
+}
+
+.show-more-btn {
+  background: none;
+  border: none;
+  color: #1877F2;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 12px 0;
+  margin: 4px 0;
+  text-align: left;
+  display: inline-block;
+}
+
+.feature-list {
+  background: #f8f9fa;
+  border-radius: 24px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.feature-list ul {
+  margin-left: 24px;
+  margin-top: 12px;
+}
+
+.feature-list li {
+  margin: 12px 0;
+}
+
+.notice-box {
+  background: #e8f0fe;
+  border-left: 5px solid #1877F2;
+  padding: 16px 20px;
+  border-radius: 16px;
+  margin: 20px 0;
+}
+
+.tiers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 32px 0 24px 0;
+}
+
+.tier {
+  flex: 1 1 280px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.tier:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.15);
+}
+
+.tier-content {
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.tier-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+}
+
+.support-amount {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1c1c1e;
+  margin: 12px 0;
+}
+
+.tier-description {
+  color: #666;
+  font-weight: 600;
+font-size: 16px;
+}
+
+.tab-badge {
+  text-align: center;
+  background: #1877F2;
+  color: white;
+  padding: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 0 0 24px 24px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  z-index: 1000;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background: #ffffff;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  background: #1877F2;
+  color: white;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 22px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.modal-header .close {
+  font-size: 32px;
+  cursor: pointer;
+  font-weight: 400;
+  background: none;
+  border: none;
+  color: white;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-header .close:hover {
+  opacity: 0.7;
+}
+
+.modal-body {
+  padding: 28px;
+  flex: 1;
+}
+
+.modal-body p {
+  margin: 12px 0;
+}
+
+.modal-body ul {
+  margin: 12px 0 12px 24px;
+}
+
+.modal-body li {
+  margin: 8px 0;
+}
+
+.icon-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 24px 0 16px 0;
+  flex-wrap: wrap;
+}
+
+.icon-button {
+  background: #1877F2;
+  color: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 60px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.icon-button i {
+  font-size: 28px;
+}
+
+.icon-button:hover {
+  background: #145dbf;
+}
+
+.accordion {
+  margin: 16px 0;
+  border: 1px solid #e5e5ea;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  background: #f2f2f7;
+  padding: 16px 20px;
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #ffffff;
+  padding: 0 20px;
+}
+
+.accordion-content p {
+  padding: 16px 0;
+  margin: 0;
+}
+
+.partnership-box {
+  background: #f8f9ff;
+  border-radius: 28px;
+  padding: 28px;
+  margin: 32px 0;
+  text-align: center;
+  border: 1px solid #dce3fc;
+}
+
+.faq-item {
+  margin: 20px 0;
+  border-bottom: 1px solid #e5e5ea;
+  padding-bottom: 16px;
+}
+
+.faq-question {
+  font-weight: 800;
+  font-size: 18px;
+  cursor: pointer;
+  color: #1877F2;
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  display: none;
+  margin-top: 12px;
+  color: #555;
+  padding-left: 12px;
+ font-weight: 800;
+ font-size: 17px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 6px solid #e5e5ea;
+  font-color: #1877F2;
+ font-weight: 500;
+ font-size: 17px;
+}
+
+hr {
+  margin: 32px 0;
+  border: true;
+  border-top: 5px solid #e5e5ea;
+}
+
+@media screen and (max-width: 600px) {
+  .container { padding: 16px; }
+  h1 { font-size: 34px; }
+  h2 { font-size: 24px; }
+  p, li, .modal-body p { font-size: 18px; }
+  .tier-content { padding: 20px; }
+  .support-amount { font-size: 28px; }
+  .icon-button { width: 80px; height: 80px; font-size: 14px; }
+  .icon-button i { font-size: 24px; }
+}
+
+.download-section {
+  margin: 32px 0;
+  text-align: center;
+}
+
+/* Footer Actions Container */
+.footer-actions {
+  margin: 48px 0 24px 0;
+  text-align: center;
+}
+
+.footer-actions h3 {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+/* Tier 1: Contact Icons Row */
+.contact-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.contact-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-icon:active {
+  transform: scale(0.92);
+}
+
+.contact-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: #ffffff;
+}
+
+/* Official Brand Colors */
+.contact-icon.email { background-color: #EA4335; }    /* Standard Mail Red */
+.contact-icon.phone { background-color: #34C759; }    /* Action Green */
+.contact-icon.whatsapp { background-color: #25D366; } /* WhatsApp Green */
+.contact-icon.facebook { background-color: #1877F2; } /* Meta Blue */
+
+/* Tier 2: The Share Button */
+.share-action-btn {
+  background-color: #1877F2;  /* Distinct dark color to separate from brands */
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 350px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transition: transform 0.1s;
+}
+
+.share-action-btn:active {
+  transform: scale(0.96);
+}
+
+.share-action-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: #ffffff;
+}
+/* Header */
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 1. FULL BLEED HERO */
+.full-bleed-hero {
+  background-color: #1877F2;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 0; 
+  box-sizing: border-box;
+}
+
+/* 2. TOP BAR ELEMENTS */
+.hero-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+/* 3. HERO CONTENT */
+.hero-content {
+  padding: 10px 20px 40px 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.hero-content h1 { margin-top: 0; color: #ffffff; font-size: 25px; }
+.hero-content .subhead { color: rgba(255,255,255,0.9); font-size: 17px; margin-bottom: 24px; line-height: 1.5; }
+
+.full-bleed-hero .hero-btn {
+  background-color: #ffffff; color: #1877F2;
+  padding: 14px 28px; border-radius: 50px; font-weight: 800;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.brand-text {
+  background-color: #ffffff;
+  color: #1877F2;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 14px;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.hero-top-bar {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+/* Premium Feature Cards */
+.app-feature-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.app-feature-card {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 16px 20px;
+  border-radius: 16px;
+  font-weight: 900;
+  font-size: 17px;
+  color: #1c1c1e;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid #eaeaea;
+  transition: transform 0.2s;
+}
+
+.app-feature-card i {
+  font-size: 22px;
+  margin-right: 16px;
+  width: 28px;
+  text-align: center;
+}
+
+/* Tighten text blocks */
+.app-text-block {
+  border-left: none !important; 
+  padding: 0 !important;
+  margin-bottom: 0;
+}
+
+.app-text-block p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Modern Notice Box */
+.app-notice-box {
+  background-color: #f0f7ff;
+  border: 1px solid #d6e8fa;
+  border-left: none !important;
+  padding: 16px 20px;
+  border-radius: 16px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #1c1c1e;
+  margin-top: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* Button Stacking Container */
+.hero-action-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px; /* Perfect spacing between the two buttons */
+  margin-top: 24px;
+}
+
+/* Ensure the white button has no conflicting margins inside the stack */
+.hero-action-stack .hero-btn {
+  margin-top: 0; 
+}
+
+/* Premium WhatsApp Pulsating Button */
+.whatsapp-pulse-btn {
+  background-color: #25D366;
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-sizing: border-box;
+  max-width: 100%;
+  transition: transform 0.2s;
+  /* The pure CSS animation is called here */
+  animation: premium-pulse 2s infinite;
+}
+
+.whatsapp-pulse-btn:active {
+  transform: scale(0.95);
+}
+
+/* The CSS Keyframes for the Heartbeat/Ripple Glow */
+@keyframes premium-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.8), 0 4px 12px rgba(0,0,0,0.2);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0), 0 4px 12px rgba(0,0,0,0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 4px 12px rgba(0,0,0,0.2);
+  }
+}
+
+/* Forces both stacked buttons to be the exact same width */
+.hero-action-stack .hero-btn,
+.hero-action-stack .whatsapp-pulse-btn {
+  width: 100%;
+  max-width: 320px; 
+  justify-content: center; 
+}
+</style>
+</head>
+<body>
+
+<div class="full-bleed-hero">
+ <div class="hero-top-bar">
+ <div class="brand-text">Don Victor Ministries Online Community</div>
+ </div>
+  
+  <div class="hero-content">
+    <h1>DVBible Game Donor Page</h1>
+    <p class="subhead">Partner with us in a digital technology movement to reach the world with the Word of God. Explore DVBible Game and experience a new way to renew your mind.</p>
+    
+     <div class="hero-action-stack">
+    <a href="https://dvgame.donvictorministry.org.ng/" class="hero-btn">
+      <i class="fa-solid fa-gamepad"></i> Download DVBible Game
+    </a>
+
+    <a href="https://chat.whatsapp.com/IULyDDuemQu7yj5S2cNmNU?mode=gi_t" target="_blank" class="whatsapp-pulse-btn">
+      <i class="fa-brands fa-whatsapp" style="font-size: 22px;"></i> Join Our Community
+    </a>
+  </div>
+  </div> 
+
+<div class="container">
+<div id="aboutBlock" class="text-block collapsed">
+<p><strong style="color: #1877F2;">Welcome to the DVBible Game Donor Page.</strong></p>
+<p>While searching for digital entertainment, I noticed a glaring absence of clean, spiritually enriching, and ad free games. The digital world is overflowing with distractions, and finding a game that builds your spirit instead of draining it seemed almost impossible.</p>
+<p>Imagine that frustration, and then imagine creating the very solution.</p>
+<p><strong style="color: #1877F2;">That solution is DVBible Game.</strong></p>
+<p>To God be all the glory. He taught me coding and granted me the wisdom for inventive solutions, just as Proverbs 8:12 declares, "I, wisdom, dwell with prudence, and find out knowledge of witty inventions." Every day, He sustains me with spiritual insight and technical skill, enabling me to build tools that glorify Him and inspire His people.</p>
+<p><strong style="color: #1877F2;">Creator of DVBible Game</strong></p>
+</div>
+<button class="show-more-btn" onclick="toggleTextBlock('aboutBlock', this)">Show More</button>
+
+<h2>What DVBible Game Is</h2>
+<div class="app-text-block">
+  <p>A deeply engaging, offline-first Bible game. No distractions. Just a focused environment built for spiritual growth and fun.</p>
+  
+  <div class="app-feature-grid">
+    <div class="app-feature-card">
+      <i class="fa-solid fa-trophy" style="color:#1877F2;"></i> 
+      Bible Inspired Gameplay
+    </div>
+    <div class="app-feature-card">
+      <i class="fa-solid fa-wifi" style="color:#1877F2;"></i> 
+      100% Offline Capable
+    </div>
+    <div class="app-feature-card">
+      <i class="fa-solid fa-shield-halved" style="color:#1877F2;"></i> 
+      Distraction-Free Environment
+    </div>
+    <div class="app-feature-card">
+      <i class="fa-solid fa-scroll" style="color:#1877F2;"></i> 
+      Deep Scriptural Integration
+    </div>
+  </div>
+  
+  <p>Sharpen your mind and spirit, anytime and anywhere.</p>
+</div>
+
+<hr style="border: 0; height: 1px; background-color: #eaeaea; margin: 24px 0;">
+
+<h2>Why You Will Love It</h2>
+<div class="app-text-block">
+  <p>Play in airplane mode. Challenge yourself, memorize scripture, and enjoy clean entertainment without interruption.</p>
+  
+  <div class="app-notice-box">
+    <i class="fa-solid fa-circle-info" style="color: #1877F2; font-size: 20px; margin-top: 2px;"></i> 
+    <div>
+      <strong>Intentionally Different:</strong> No algorithms and no worldly advertisements. By joining, you agree to uphold respect, prayer, and edification. Together, we protect this space.
+    </div>
+  </div>
+</div>
+
+ <div class="testimonial notice-box">
+  <div id="joelTestimonial" class="text-block collapsed">
+    <p>"Finding a game you can confidently play on your phone without worry is almost impossible these days. Rare is a game that feeds your spirit, soul, and body instead of stealing your time.</p>  
+    <p>I met the servant of God at a conference last year. When he shared how he began coding by divine enablement, something shifted inside me in a deeply healing way. His testimony moved everyone in the room to tears. I walked up to him, still trembling, and said, 'I need to know more.'</p>
+    <p>Since that day, I have stayed close to him. I have personally tested more than ten of his apps. Each one carries the unmistakable mark of grace. Over time, I became fully convinced by the visible fruit of a life surrendered to God.</p>
+    <p>I have played DVBible Game multiple times during its testing phase. This is not just a game. It is an encounter.</p>
+    <p>If you desire something that will stir your spirit and renew your mind, I wholeheartedly recommend this Bible game. It is engaging, uplifting, and completely free from ads."</p>
+  </div>
+  <button class="show-more-btn" onclick="toggleTextBlock('joelTestimonial', this)" style="padding: 4px 0; font-size: 18px;">Show More</button>
+  <div style="margin-top: 17px; font-weight: 700;">— Pastor Joel Oji, Borokiri, Port Harcourt.</div>
+</div>
+ 
+ <hr style="border: 0; height: 1px; background-color: #eaeaea; margin: 24px 0;">
+    
+   <div class="profile">
+    <img class="profile-image" src="https://i.ibb.co/84dRKY60/Screenshot-20260103-005841.png" alt="Rev. Don Victor, PhD" /140x140?text=Your+Photo'">
+    <div class="profile-name">Rev. Don Victor, PhD</div>
+    <div class="profile-role">Creator and Developer of DVBible Game</div>
+    <a href="https://www.donvictoracademy.net" class="portfolio-button">
+  <i class="fa-solid fa-crown"></i> View Portfolio
+  </a>
+
+  <h2>The Vision: Beyond One Game</h2>
+  <div id="visionBlock" class="text-block collapsed">
+    <p>DVBible Game is just the beginning of something greater. We have more than a hundred applications awaiting deployment.</p>
+    <p>We are actively developing a growing ecosystem of applications designed for organizations, as well as spiritually uplifting digital technologies, including games and utility applications.</p>
+    <p>Your support does more than sustain one app. It drives the research, development, and launch of multiple Christian platforms designed to impact lives globally. Together, we are building a future where digital experiences strengthen faith and renew minds.</p>
+  </div>
+  <button class="show-more-btn" onclick="toggleTextBlock('visionBlock', this)">Show More</button>
+
+  <h2>Support the Mission</h2>
+  <p>DVBible Game is free to play, but it is not free to build, expand, and maintain. If you believe in solutions that serve people with clarity, integrity, and spiritual depth, you can support this digital evangelism mission.</p>
+
+  <div class="tiers">
+    <div class="tier" onclick="openModal('monthlyModal')">
+      <div class="tier-content">
+        <h3>Monthly Supporter</h3>
+        <div class="support-amount">N2,000</div>
+        <div class="tier-description">Help sustain the app month by month</div>
+      </div>
+      
+   <div class="tab-badge">Tap to View <i class="fa-solid fa-arrow-pointer" style="margin-left: 4px;"></i></div>
+    </div>
+    <div class="tier" onclick="openModal('quarterlyModal')">
+      <div class="tier-content">
+        <h3>Quarterly Partner</h3>
+        <div class="support-amount">N5,000</div>
+        <div class="tier-description">Fund new levels and game features</div>
+      </div>
+      <div class="tab-badge">Tap to View <i class="fa-solid fa-arrow-pointer" style="margin-left: 4px;"></i></div>
+    </div>
+    
+   <div class="tier" onclick="openModal('yearlyModal')">
+      <div class="tier-content">
+        <h3>Yearly Vision Partner</h3>
+        <div class="support-amount">N20,000</div>
+        <div class="tier-description">Help expand the gaming ecosystem globally</div>
+      </div>
+      <div class="tab-badge">Tap to View <i class="fa-solid fa-arrow-pointer" style="margin-left: 4px;"></i></div>
+    </div>
+  </div>
+
+  <button class="button button-outline" onclick="openModal('onetimeModal')">
+    <i class="fa-solid fa-heart"></i> Give Any Amount of Blessings 
+  </button>
+  <button class="button button-outline" onclick="openModal('internationalModal')">
+    <i class="fa-solid fa-globe"></i> Support from Outside Nigeria
+  </button>
+
+  <div class="partnership-box">
+    <h3>Let's Partner Together</h3>
+    <div id="partnerBlock" class="text-block collapsed">
+      <p>I built DVBible Game as my gift to this generation, fully funded from my own resources, but its growth needs partnership. Now it is time to scale, and that also needs partnership. </p>
+      <p>I am calling on individuals and organizations who believe in purpose driven innovation that glorifies God.</p>
+      <ul style="text-align: left; margin: 16px 0 16px 24px;">
+        <li>Whether as an investor, distributor, or collaborator, your partnership will help bring clean, uplifting, and impactful digital experiences to more people.</li>
+    </div>
+    
+   <button class="show-more-btn" onclick="toggleTextBlock('partnerBlock', this)">Show More</button>
+    <button class="button" onclick="openModal('partnerModal')" style="margin-top: 16px;">
+      <i class="fa-solid fa-handshake"></i> Contact for Partnership
+    </button>
+  </div>
+
+  <h2>Frequently Asked Questions</h2>
+  <div id="faqContainer">
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        Is DVBible Game really free? <i class="fa-solid fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">Yes. The game is completely free to play with absolutely no worldly ads. Support is voluntary for those who believe in the mission and want to help it grow.</div>
+    </div>
+    
+     <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        Where does my donation go? <i class="fa-solid fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">One hundred percent goes into game development, new upcoming Christian apps, server infrastructure, and ensuring the platform remains totally ad free for all players.</div>
+    </div>
+    
+      <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        Can I support anonymously? <i class="fa-solid fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">Absolutely. No need to share your name unless you want recognition.</div>
+    </div>
+    
+     <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        How can international supporters be part of this mission?<i class="fa-solid fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">Use the "Support from Outside Nigeria" button above to view contact instructions for our international ministry partners.</div>
+    </div>
+    
+      <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        Does my support only go toward games? <i class="fa-solid fa-chevron-down"></i>
+      </div>
+      
+      <div class="faq-answer">No. We have over a hundred applications yet to be launched due to limited funding. Your support goes a long way in helping us launch and develop more utility driven applications designed to solve complex organizational challenges and create impactful educational tools. It also helps sustain our mission to reach nations for the Lord and expand platforms that inspire spiritual growth and transformation.</div>
+    </div>
+  </div>
+
+<div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        How else does my support make an impact?<i class="fa-solid fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">Your support enables continuous development, testing, and improvement of our applications. It also helps us maintain quality, expand our reach, and ensure that our platforms remain accessible, impactful, and spiritually enriching.</div>
+    </div>
+
+       <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        Can I be part of the mission beyond giving?<i class="fa-solid fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">Yes. You can support us through prayers, sharing our platforms with others, and engaging with our content. Every form of support contributes to advancing the mission and reaching more lives with meaningful, transformative tools.</div>
+    </div>
+  <div class="footer">
+    <p><strong style="color: #1877F2;">Rev. Don Victor, PhD</strong></p>Creator and Developer of DVBible Game</p>
+    <p style="margin-top: 12px;">Devoted to serving God with diligence, building with purpose, and living with gratitude.</p>
+  
+  <div class="footer-actions">
+  <h3>Reach Out Directly</h3>
+  
+  <div class="contact-row">
+    
+    <a href="mailto: donvictorministry@gmail.com" class="contact-icon email" aria-label="Email Us">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    </a>
+    
+    <a href="tel:+2347035794649" class="contact-icon phone" aria-label="Call Us">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    </a>
+    
+    <a href="https://wa.me/2348086590253" target="_blank" class="contact-icon whatsapp" aria-label="WhatsApp Us">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    </a>
+    
+    <a href="https://facebook.com/Rev.DonVictor" target="_blank" class="contact-icon facebook" aria-label="Visit Facebook">
+      <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+    
+  </div>
+
+  <button class="share-action-btn" onclick="shareMinistry()">
+    <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+    Share This Mission
+  </button>
+</div>
+  
+</div>
+</div>
+
+<div id="monthlyModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      Monthly Supporter
+      <button class="close" onclick="closeModal('monthlyModal')">&times;</button>
+    </div>
+    
+      <div class="modal-body">
+      <p><strong>N2,000 per month</strong></p>
+      <ul><li>Priority email support</li><li>Update notifications for new games</li><li>Community membership recognition</li></ul>
+      <div class="accordion">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          Show Bank Details <i class="fa-solid fa-building-columns"></i>
+        </div>
+        
+        <div class="accordion-content">
+          <p>Bank: UBA<br>Account Name: DON VICTOR<br>Account Number: 2056442548<br></p>
+          <button class="button button-small" onclick="copyBank()">
+            <i class="fa-regular fa-copy"></i> Copy to Clipboard
+          </button>
+        </div>
+      </div>
+      
+      <div class="icon-row">
+        <button class="icon-button" onclick="openWhatsApp()">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </button>
+        
+       <button class="icon-button" onclick="openPhone()">
+          <i class="fa-solid fa-phone"></i> Phone
+        </button>
+        <button class="icon-button" onclick="openEmail()">
+          <i class="fa-regular fa-envelope"></i> Email
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="quarterlyModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      Quarterly Partner
+      <button class="close" onclick="closeModal('quarterlyModal')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p><strong>N5,000 per quarter</strong></p>
+      <ul><li>All Monthly benefits</li><li>Priority access to beta test new games</li><li>Quarterly ministry newsletter</li></ul>
+      <div class="accordion">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          Show Bank Details <i class="fa-solid fa-building-columns"></i>
+        </div>
+        
+         <div class="accordion-content">
+          <p>Bank: UBA<br>Account Name: DON VICTOR<br>Account Number: 2056442548<br></p>
+          <button class="button button-small" onclick="copyBank()">
+            <i class="fa-regular fa-copy"></i> Copy to Clipboard
+          </button>
+        </div>
+      </div>
+      
+       <div class="icon-row">
+        <button class="icon-button" onclick="openWhatsApp()">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </button>
+        <button class="icon-button" onclick="openPhone()">
+          <i class="fa-solid fa-phone"></i> Phone
+        </button>
+        <button class="icon-button" onclick="openEmail()">
+          <i class="fa-regular fa-envelope"></i> Email
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="yearlyModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      Yearly Vision Partner
+      <button class="close" onclick="closeModal('yearlyModal')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p><strong>N20,000 per year</strong></p>
+      <ul><li>All Monthly and Quarterly benefits</li><li>Priority input on game development</li><li>Special acknowledgment in the app</li><li>Sponsor digital ministry growth</li></ul>
+      <div class="accordion">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          Show Bank Details <i class="fa-solid fa-building-columns"></i>
+        </div>
+        <div class="accordion-content">
+          <p>Bank: UBA<br>Account Name: DON VICTOR<br>Account Number: 2056442548<br></p>
+          <button class="button button-small" onclick="copyBank()">
+            <i class="fa-regular fa-copy"></i> Copy to Clipboard
+          </button>
+        </div>
+      </div>
+      
+      <div class="icon-row">
+        <button class="icon-button" onclick="openWhatsApp()">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </button>
+        <button class="icon-button" onclick="openPhone()">
+          <i class="fa-solid fa-phone"></i> Phone
+        </button>
+        <button class="icon-button" onclick="openEmail()">
+          <i class="fa-regular fa-envelope"></i> Email
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="onetimeModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      One-Time Blessing
+      <button class="close" onclick="closeModal('onetimeModal')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>Any amount you give is a massive blessing to this digital ministry. Thank you.</p>
+      <div class="accordion">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          Show Bank Details <i class="fa-solid fa-building-columns"></i>
+        </div>
+        <div class="accordion-content">
+          <p>Bank: UBA<br>Account Name: DON VICTOR<br>Account Number: 2056442548<br></p>
+          <button class="button button-small" onclick="copyBank()">
+            <i class="fa-regular fa-copy"></i> Copy to Clipboard
+          </button>
+        </div>
+      </div>
+      <div class="icon-row">
+        <button class="icon-button" onclick="openWhatsApp()">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </button>
+        <button class="icon-button" onclick="openPhone()">
+          <i class="fa-solid fa-phone"></i> Phone
+        </button>
+        <button class="icon-button" onclick="openEmail()">
+          <i class="fa-regular fa-envelope"></i> Email
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="internationalModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      Global Support
+      <button class="close" onclick="closeModal('internationalModal')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>To our international partners, thank you for your heart to support the global expansion of DVBible Game and our upcoming digital ministry tools.</p>
+      <p>Our automated international payment gateway is currently being set up. In the meantime, please reach out to us directly via WhatsApp or Email, and we will gladly provide you with alternative, secure international giving options.</p>
+      
+      <p style="font-size: 14px; color: #666; margin-top: 24px;">Please reach out directly:</p>
+      <div class="icon-row">
+        <button class="icon-button" onclick="openWhatsApp()">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </button>
+        <button class="icon-button" onclick="openEmail()">
+          <i class="fa-regular fa-envelope"></i> Email
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="partnerModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      Partnership Inquiry
+      <button class="close" onclick="closeModal('partnerModal')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>I am looking for serious partners — Kingdom investors, distributors, and collaborators.</p>
+      <p>Let's discuss how we can grow the DVBible Game ecosystem together.</p>
+      <div class="icon-row">
+        <button class="icon-button" onclick="openWhatsApp()">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </button>
+        <button class="icon-button" onclick="openPhone()">
+          <i class="fa-solid fa-phone"></i> Phone
+        </button>
+        <button class="icon-button" onclick="openEmail()">
+          <i class="fa-regular fa-envelope"></i> Email
+        </button>
+      </div>
+      <p style="margin-top: 20px; font-size: 14px; color: #666;">Ask me for my growth metrics and development roadmap for upcoming games.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleTextBlock(blockId, button) {
+  const block = document.getElementById(blockId);
+  if (block.classList.contains('collapsed')) {
+    block.classList.remove('collapsed');
+    button.textContent = 'Show Less';
+  } else {
+    block.classList.add('collapsed');
+    button.textContent = 'Show More';
+  }
+}
+
+function openModal(id) {
+  document.getElementById(id).style.display = 'flex';
+}
+
+function closeModal(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+function toggleAccordion(header) {
+  const content = header.nextElementSibling;
+  const icon = header.querySelector('i');
+  
+  if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+    content.style.maxHeight = null;
+  } else {
+    content.style.maxHeight = content.scrollHeight + 'px';
+  }
+}
+
+function copyBank() {
+  const bankDetails = "UBA\nAccount Name: Don Victor\nAccount Number: 2056442548";
+  navigator.clipboard.writeText(bankDetails).then(() => {
+    alert("Bank details copied. Thank you and God bless your giving.");
+  });
+}
+
+function openWhatsApp() {
+  window.open('https://wa.me/2348086590253?text=I%20want%20to%20support%20DVBible%20Game%20and%20the%20Ministry', '_blank');
+}
+
+function openPhone() {
+  window.open('tel:2347035794649', '_blank');
+}
+
+function openEmail() {
+  window.open('mailto: donvictorministry@gmail.com?subject=DVBible%20Game%20Partnership%20Inquiry', '_blank');
+}
+
+function toggleFAQ(questionElement) {
+  const answer = questionElement.nextElementSibling;
+  const icon = questionElement.querySelector('i');
+  
+  if (answer.style.display === 'none' || !answer.style.display) {
+    answer.style.display = 'block';
+    icon.classList.remove('fa-chevron-down');
+    icon.classList.add('fa-chevron-up');
+  } else {
+    answer.style.display = 'none';
+    icon.classList.remove('fa-chevron-up');
+    icon.classList.add('fa-chevron-down');
+  }
+}
+
+function shareMinistry() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'DVBible Digital Ministry',
+      text: 'Join this distraction-free, spiritually enriching Christian ecosystem. No ads, just growth.',
+      url: window.location.href 
+    })
+    .then(() => console.log('Successful share'))
+    .catch((error) => console.log('Error sharing:', error));
+  } else {
+    // Fallback if they are using a very old browser that doesn't support the Native Share menu
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      alert("Link copied to clipboard! You can now paste and share it with your network.");
+    });
+  }
+}
+</script>
+
+<script>
+(function(window, document) {
+  "use strict";
+
+  const CONFIG = {
+    API_URL: "https://script.google.com/macros/s/AKfycbyiekArX2iy5jZ_PXFFJjNVYQsugaoDzuCUwoaMgP8EijE2-Yv9Gk38cINcfvFHs2DhVg/exec",
+    BATCH_SIZE: 10,
+    SYNC_INTERVAL_MS: 30000,
+    HEARTBEAT_INTERVAL_MS: 60000,
+    GEO_CACHE_TTL_MS: 86400000,
+    DB_NAME: "MinistryTelemetryDB",
+    DB_VERSION: 1,
+    STORE_NAME: "events_queue"
+  };
+
+  const Utils = {
+    uuid: function() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+    },
+    getUserId: function() {
+      let uid = localStorage.getItem("min_sys_uid");
+      if (!uid) {
+        uid = "USR-" + this.uuid().substring(0, 13).toUpperCase();
+        localStorage.setItem("min_sys_uid", uid);
+      }
+      return uid;
+    },
+    getSessionId: function() {
+      let sid = sessionStorage.getItem("min_sys_sid");
+      if (!sid) {
+        sid = "SESS-" + this.uuid().substring(0, 9).toUpperCase();
+        sessionStorage.setItem("min_sys_sid", sid);
+      }
+      return sid;
+    },
+    getDeviceType: function() {
+      const ua = navigator.userAgent;
+      if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) return "Tablet";
+      if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) return "Mobile";
+      return "Desktop";
+    }
+  };
+
+  const Database = {
+    db: null,
+    init: function() {
+      return new Promise((resolve, reject) => {
+        const request = indexedDB.open(CONFIG.DB_NAME, CONFIG.DB_VERSION);
+        request.onupgradeneeded = function(event) {
+          const db = event.target.result;
+          if (!db.objectStoreNames.contains(CONFIG.STORE_NAME)) {
+            db.createObjectStore(CONFIG.STORE_NAME, { keyPath: "id", autoIncrement: true });
+          }
+        };
+        request.onsuccess = function(event) {
+          Database.db = event.target.result;
+          resolve();
+        };
+        request.onerror = function(event) {
+          reject(event.target.error);
+        };
+      });
+    },
+    addEvent: function(eventData) {
+      if (!this.db) return Promise.reject("DB not initialized");
+      return new Promise((resolve, reject) => {
+        const transaction = this.db.transaction([CONFIG.STORE_NAME], "readwrite");
+        const store = transaction.objectStore(CONFIG.STORE_NAME);
+        const request = store.add(eventData);
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+      });
+    },
+    getEvents: function(limit) {
+      if (!this.db) return Promise.reject("DB not initialized");
+      return new Promise((resolve, reject) => {
+        const transaction = this.db.transaction([CONFIG.STORE_NAME], "readonly");
+        const store = transaction.objectStore(CONFIG.STORE_NAME);
+        const request = store.openCursor();
+        const results = [];
+        request.onsuccess = function(event) {
+          const cursor = event.target.result;
+          if (cursor && results.length < limit) {
+            results.push({ key: cursor.key, value: cursor.value });
+            cursor.continue();
+          } else {
+            resolve(results);
+          }
+        };
+        request.onerror = () => reject(request.error);
+      });
+    },
+    deleteEvents: function(keys) {
+      if (!this.db) return Promise.reject("DB not initialized");
+      return new Promise((resolve, reject) => {
+        const transaction = this.db.transaction([CONFIG.STORE_NAME], "readwrite");
+        const store = transaction.objectStore(CONFIG.STORE_NAME);
+        keys.forEach(key => store.delete(key));
+        transaction.oncomplete = () => resolve();
+        transaction.onerror = () => reject(transaction.error);
+      });
+    }
+  };
+
+  const Telemetry = {
+    geoData: null,
+    isActive: true,
+    lastActiveTime: Date.now(),
+    activeDuration: 0,
+    maxScrollDepth: 0,
+    
+    init: function() {
+      this.bindEvents();
+      this.fetchGeo().then(() => {
+        this.logEvent("pageView");
+      });
+      setInterval(() => this.logHeartbeat(), CONFIG.HEARTBEAT_INTERVAL_MS);
+      setInterval(() => Network.syncQueue(), CONFIG.SYNC_INTERVAL_MS);
+    },
+    bindEvents: function() {
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") {
+          this.isActive = true;
+          this.lastActiveTime = Date.now();
+        } else {
+          this.isActive = false;
+          this.activeDuration += Math.floor((Date.now() - this.lastActiveTime) / 1000);
+          this.logEvent("visibilityHidden");
+          Network.syncQueue(true);
+        }
+      });
+      window.addEventListener("scroll", () => {
+        const depth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        if (depth > this.maxScrollDepth) {
+          this.maxScrollDepth = depth > 100 ? 100 : depth;
+        }
+      }, { passive: true });
+      window.addEventListener("beforeunload", () => {
+        this.activeDuration += Math.floor((Date.now() - this.lastActiveTime) / 1000);
+        this.logEvent("pageExit");
+        Network.syncQueue(true);
+      });
+      window.addEventListener("error", (e) => {
+        this.logEvent("jsError", { errorMessage: e.message, filename: e.filename, lineno: e.lineno });
+      });
+    },
+    fetchGeo: function() {
+      return new Promise((resolve) => {
+        const cached = localStorage.getItem("min_sys_geo");
+        if (cached) {
+          try {
+            const parsed = JSON.parse(cached);
+            if (Date.now() - parsed.timestamp < CONFIG.GEO_CACHE_TTL_MS) {
+              this.geoData = parsed.data;
+              return resolve();
+            }
+          } catch(e) {}
+        }
+        fetch("https://ipapi.co/json/")
+          .then(res => res.json())
+          .then(data => {
+            this.geoData = { ip: data.ip, country: data.country_name, city: data.city, isp: data.org };
+            localStorage.setItem("min_sys_geo", JSON.stringify({ timestamp: Date.now(), data: this.geoData }));
+            resolve();
+          })
+          .catch(() => {
+            this.geoData = { ip: "unknown", country: "unknown", city: "unknown", isp: "unknown" };
+            resolve();
+          });
+      });
+    },
+    logEvent: function(eventType, extraData = {}) {
+      if (!this.geoData) return;
+      
+      const payload = {
+        userId: Utils.getUserId(),
+        sessionId: Utils.getSessionId(),
+        type: eventType,
+        timestamp: new Date().toISOString(),
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        deviceType: Utils.getDeviceType(),
+        durationMinutes: parseFloat((this.activeDuration / 60).toFixed(2)),
+        scrollDepth: this.maxScrollDepth,
+        geo: this.geoData,
+        extra: extraData
+      };
+
+      Database.addEvent(payload).then(() => {
+        Database.getEvents(100).then(events => {
+          if (events.length >= CONFIG.BATCH_SIZE) {
+            Network.syncQueue();
+          }
+        });
+      }).catch(console.error);
+    },
+    logHeartbeat: function() {
+      if (this.isActive) {
+        this.activeDuration += Math.floor((Date.now() - this.lastActiveTime) / 1000);
+        this.lastActiveTime = Date.now();
+        this.logEvent("heartbeat");
+      }
+    }
+  };
+
+  const Network = {
+    isSyncing: false,
+    syncQueue: function(forceSync = false) {
+      if (this.isSyncing) return;
+      this.isSyncing = true;
+
+      Database.getEvents(forceSync ? 50 : CONFIG.BATCH_SIZE).then(records => {
+        if (records.length === 0) {
+          this.isSyncing = false;
+          return;
+        }
+
+        const keys = records.map(r => r.key);
+        const data = records.map(r => r.value);
+
+        const payload = JSON.stringify({ action: "batchTelemetry", data: data });
+
+        const fetchOptions = {
+          method: "POST",
+          headers: { "Content-Type": "text/plain" },
+          body: payload
+        };
+
+        if (forceSync && "keepalive" in new Request("")) {
+          fetchOptions.keepalive = true;
+        }
+
+        fetch(CONFIG.API_URL, fetchOptions)
+          .then(res => {
+            if (res.ok || res.type === 'opaque') {
+              Database.deleteEvents(keys).finally(() => {
+                this.isSyncing = false;
+              });
+            } else {
+              this.isSyncing = false;
+            }
+          })
+          .catch(() => {
+            this.isSyncing = false;
+          });
+      });
+    }
+  };
+
+  const TickerUI = {
+    init: function() {
+      this.fetchTicker();
+      setInterval(() => this.fetchTicker(), 300000); 
+    },
+    fetchTicker: function() {
+      const payload = JSON.stringify({ action: "getTicker" });
+      fetch(CONFIG.API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain" },
+        body: payload
+      })
+      .then(res => res.json())
+      .then(response => {
+        if (response.status === "success" && response.data) {
+          this.render(response.data);
+        } else {
+          this.remove();
+        }
+      })
+      .catch(() => {}); 
+    },
+    render: function(data) {
+      let container = document.getElementById("min-sys-ticker");
+      if (!container) {
+        this.injectStyles();
+        container = document.createElement("div");
+        container.id = "min-sys-ticker";
+        document.body.appendChild(container);
+      }
+      
+      container.style.backgroundColor = data.bgColor || "#1877F2";
+      container.style.color = data.textColor || "#FFFFFF";
+      
+      container.innerHTML = `
+        <div class="min-sys-ticker-wrap">
+          <div class="min-sys-ticker-content" style="color: ${data.textColor || '#FFFFFF'}">
+            ${data.message}
+          </div>
+        </div>
+        <button class="min-sys-ticker-close" onclick="document.getElementById('min-sys-ticker').style.display='none'">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      `;
+    },
+    remove: function() {
+      const container = document.getElementById("min-sys-ticker");
+      if (container) container.remove();
+    },
+    injectStyles: function() {
+      if (document.getElementById("min-sys-ticker-styles")) return;
+      const css = `
+        #min-sys-ticker {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 60px;
+          z-index: 2147483647;
+          display: flex;
+          align-items: center;
+          font-family: 'Inter', 'Roboto', system-ui, -apple-system, sans-serif;
+          font-size: 17px;
+          font-weight: 800;
+          box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+          overflow: hidden;
+        }
+        .min-sys-ticker-wrap {
+          flex: 1;
+          overflow: hidden;
+          white-space: nowrap;
+          position: relative;
+          height: 100%;
+          display: flex;
+          align-items: center;
+        }
+        .min-sys-ticker-content {
+          display: inline-block;
+          padding-left: 100%;
+          animation: minSysTickerScroll 25s linear infinite;
+        }
+        @keyframes minSysTickerScroll {
+          0% { transform: translate3d(0, 0, 0); }
+          100% { transform: translate3d(-100%, 0, 0); }
+        }
+        .min-sys-ticker-close {
+          background: transparent;
+          border: none;
+          color: inherit;
+          cursor: pointer;
+          height: 100%;
+          padding: 0 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0.7;
+          transition: opacity 0.2s;
+        }
+        .min-sys-ticker-close:hover {
+          opacity: 1;
+        }
+        @media (max-width: 600px) {
+          #min-sys-ticker { font-size: 18px; height: 36px; }
+          .min-sys-ticker-content { animation-duration: 90s; }
+        }
+      `;
+      const style = document.createElement("style");
+      style.id = "min-sys-ticker-styles";
+      style.textContent = css;
+      document.head.appendChild(style);
+    }
+  };
+
+  Database.init()
+    .then(() => {
+      Telemetry.init();
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", () => TickerUI.init());
+      } else {
+        TickerUI.init();
+      }
+    })
+    .catch(console.error);
+
+  window.MinistrySystem = {
+    triggerSync: () => Network.syncQueue(true),
+    getUserId: () => Utils.getUserId()
+  };
+
+})(window, document);
+</script>
+
+</body>
+</html>
+
